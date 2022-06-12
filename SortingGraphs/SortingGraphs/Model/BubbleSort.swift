@@ -43,7 +43,7 @@ struct BubbleSort: SortMethod {
    /// Implements the size property declared in the `SortMethod` protocol. This is the size of the array to sort.
    let size: Int
 
-   /// A varible to address the sortable (not yet sorted) size of the array.
+   /// A variable to address the sortable (not yet sorted) size of the array.
    private var sortSize: Int = 0
 
    /// A variable to keep track where sorting has advanced to.
@@ -70,27 +70,44 @@ struct BubbleSort: SortMethod {
     See protocol documentation for details of the method.
     */
    mutating func nextStep(array: [BarValue], swappedItems : inout SwappedItems) -> Bool {
-      if sortSize <= 1 {
-         return true
-      }
-
-      if array[innerIndex-1] > array[innerIndex] {
-         swappedItems.first = innerIndex-1
-         swappedItems.second = innerIndex
-         newSize = innerIndex
-         swappedItems.currentIndex2 = newSize
-      }
-      if innerIndex >= sortSize - 1 {
-         sortSize = newSize
-         swappedItems.currentIndex2 = newSize
-         innerIndex = 1
-         swappedItems.currentIndex1 = innerIndex
-         newSize = 0
-      } else {
-         innerIndex += 1
-         swappedItems.currentIndex1 = innerIndex
-      }
-      return false
+       if sortSize <= 1 {
+           array[0].color = .green
+           return true
+       }
+       
+       if array[innerIndex-1] > array[innerIndex] {
+           swappedItems.first = innerIndex-1
+           swappedItems.second = innerIndex
+           newSize = innerIndex
+           swappedItems.currentIndex2 = newSize
+           array[innerIndex - 1].color = .green
+           array[innerIndex].color = .gray
+       } else {
+           array[innerIndex].color = .green
+           array[innerIndex-1].color = .gray
+       }
+       
+       print(innerIndex, sortSize)
+       if innerIndex >= sortSize - 1 {
+           var startIndex = newSize + 1
+           while startIndex < array.count {
+               array[startIndex].color = .green
+               startIndex += 1
+           }
+           print("End of sortSize: ", innerIndex, newSize, sortSize)
+           sortSize = newSize
+           
+           swappedItems.currentIndex2 = newSize
+           innerIndex = 1
+           swappedItems.currentIndex1 = innerIndex
+           newSize = 0
+       } else {
+           
+           innerIndex += 1
+           swappedItems.currentIndex1 = innerIndex
+           
+       }
+       return false
    }
 
    /**

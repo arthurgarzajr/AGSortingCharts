@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 /**
  Records the timing of sort methods executed in a tight loop. The results are shown
  in the UI after animating the results.
@@ -53,14 +53,16 @@ struct TimingResult: Hashable, Comparable {
 class BarValue: Identifiable, Comparable {
     var value: Int
     var index: Int
+    var color: UIColor
     
     var id: Int {
         return index
     }
     
-    init(value: Int, index: Int) {
+    init(value: Int, index: Int, color: UIColor = UIColor.gray) {
         self.value = value
         self.index = index
+        self.color = color
     }
     
     static func < (lhs: BarValue, rhs: BarValue) -> Bool {
@@ -93,7 +95,8 @@ class SortCoordinator: ObservableObject {
    @Published var usePositiveNumbers: Bool = true
    
    private let waitingForNextSortMethod = 1.0
-   private let waitingForNextSortStep = 0.0000001
+    private let waitingForNextSortStep = 0.0000001
+//    private let waitingForNextSortStep = 0.1
 
    @Published var countOfNumbers = 50
 
@@ -148,7 +151,7 @@ class SortCoordinator: ObservableObject {
       countOfNumbers = count
       originalArray = [BarValue]()
           
-      for i in 0..<count {
+      for i in 1..<count {
           let barValue = BarValue(value: i, index: i)
           originalArray.append(barValue)
       }

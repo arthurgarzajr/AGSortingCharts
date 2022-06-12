@@ -29,6 +29,7 @@ struct ContentView: View {
                         x: .value("", barValue.index),
                         y: .value("", barValue.value)
                     )
+                    .foregroundStyle(Gradient(colors: [Color(barValue.color), .blue]))
                 }
                 .lineStyle(StrokeStyle(lineWidth: 3))
                 .symbolSize(100)
