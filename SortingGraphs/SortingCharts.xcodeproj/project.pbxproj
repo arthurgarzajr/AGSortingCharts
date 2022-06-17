@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EFECE4F2856D9FB00EE2339 /* BubbleSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFECE4E2856D9FB00EE2339 /* BubbleSortView.swift */; };
+		8EFECE512856E1FE00EE2339 /* ShellSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFECE502856E1FE00EE2339 /* ShellSortView.swift */; };
 		D97DB7522852E8E700608164 /* SortingGraphsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97DB7512852E8E700608164 /* SortingGraphsApp.swift */; };
 		D97DB7542852E8E700608164 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97DB7532852E8E700608164 /* ContentView.swift */; };
 		D97DB7562852E8E800608164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D97DB7552852E8E800608164 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8EFECE4E2856D9FB00EE2339 /* BubbleSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BubbleSortView.swift; path = SortingGraphs/BubbleSortView.swift; sourceTree = SOURCE_ROOT; };
+		8EFECE502856E1FE00EE2339 /* ShellSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellSortView.swift; sourceTree = "<group>"; };
 		D97DB74E2852E8E700608164 /* SortingCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SortingCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97DB7512852E8E700608164 /* SortingGraphsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingGraphsApp.swift; sourceTree = "<group>"; };
 		D97DB7532852E8E700608164 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				D97DE27728545CFF00608164 /* Model */,
 				D97DB7512852E8E700608164 /* SortingGraphsApp.swift */,
 				D97DB7532852E8E700608164 /* ContentView.swift */,
+				8EFECE4E2856D9FB00EE2339 /* BubbleSortView.swift */,
+				8EFECE502856E1FE00EE2339 /* ShellSortView.swift */,
 				D97DB7552852E8E800608164 /* Assets.xcassets */,
 				D97DB7572852E8E800608164 /* SortingGraphs.entitlements */,
 				D97DB7582852E8E800608164 /* Preview Content */,
@@ -178,8 +184,10 @@
 				D97DE28428545CFF00608164 /* SortCoordinator.swift in Sources */,
 				D97DB7542852E8E700608164 /* ContentView.swift in Sources */,
 				D97DE28328545CFF00608164 /* Stack.swift in Sources */,
+				8EFECE512856E1FE00EE2339 /* ShellSortView.swift in Sources */,
 				D97DB7522852E8E700608164 /* SortingGraphsApp.swift in Sources */,
 				D97DE28628545CFF00608164 /* SortMethod.swift in Sources */,
+				8EFECE4F2856D9FB00EE2339 /* BubbleSortView.swift in Sources */,
 				D97DE28928545CFF00608164 /* LampSort.swift in Sources */,
 				D97DE28728545CFF00608164 /* NativeSwiftSort.swift in Sources */,
 				D97DE28128545CFF00608164 /* BubbleSort.swift in Sources */,

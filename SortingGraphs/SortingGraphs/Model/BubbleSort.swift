@@ -71,7 +71,7 @@ struct BubbleSort: SortMethod {
     */
    mutating func nextStep(array: [BarValue], swappedItems : inout SwappedItems) -> Bool {
        if sortSize <= 1 {
-           array[0].color = .green
+           array[0].color = .blue
            return true
        }
        
@@ -80,21 +80,19 @@ struct BubbleSort: SortMethod {
            swappedItems.second = innerIndex
            newSize = innerIndex
            swappedItems.currentIndex2 = newSize
-           array[innerIndex - 1].color = .green
+           array[innerIndex - 1].color = .blue
            array[innerIndex].color = .gray
        } else {
-           array[innerIndex].color = .green
+           array[innerIndex].color = .blue
            array[innerIndex-1].color = .gray
        }
        
-       print(innerIndex, sortSize)
        if innerIndex >= sortSize - 1 {
            var startIndex = newSize + 1
            while startIndex < array.count {
-               array[startIndex].color = .green
+               array[startIndex].color = .blue
                startIndex += 1
            }
-           print("End of sortSize: ", innerIndex, newSize, sortSize)
            sortSize = newSize
            
            swappedItems.currentIndex2 = newSize
@@ -102,10 +100,8 @@ struct BubbleSort: SortMethod {
            swappedItems.currentIndex1 = innerIndex
            newSize = 0
        } else {
-           
            innerIndex += 1
            swappedItems.currentIndex1 = innerIndex
-           
        }
        return false
    }
